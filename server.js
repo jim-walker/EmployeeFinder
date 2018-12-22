@@ -10,8 +10,7 @@ app.use(express.static(path.join(__dirname, 'app/public')));
 // Add route handler files
 require('./app/routing/apiRoutes')(app);
 require('./app/routing/htmlRoutes')(app);
-// Create Listener on port 8080
-const PORT = 8080;
+var PORT = process.env.PORT || 3000;
 app.listen(PORT, function() {
   console.log('App listening on PORT: ' + PORT);
 });
